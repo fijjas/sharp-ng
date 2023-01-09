@@ -1,1 +1,29 @@
-<p>signup-page works!</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="card col-6">
+      <div class="card-header">Sign Up</div>
+      <div class="card-body">
+        <h4 class="card-subtitle mb-2">Welcome to Parrot Wings Coin Transfer!</h4>
+        <p class="card-text">Signing up with us is fast and easy – it takes less than a minute!</p>
+        <div [formGroup]="formGroup">
+          <div class="mb-3">
+            <label for="signup-email" class="form-label">Name</label>
+            <input type="text" class="form-control" id="signup-username" formControlName="username">
+          </div>
+          <div class="mb-3">
+            <label for="signup-email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="signup-email" aria-describedby="emailHelp" formControlName="email">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="signup-password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="signup-password" formControlName="password">
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary" (click)="signup()" [disabled]="formGroup.invalid">Sign Up</button>
+      </div>
+    </div>
+  </div>
+</div>

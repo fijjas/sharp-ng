@@ -10,6 +10,6 @@ import { HomeRoutingModule } from './home-routing.module';
   imports: [
     SharedModule,
     HomeRoutingModule,
-  ]
+  ],
 })
 export class HomeModule {}
