@@ -8,16 +8,50 @@
         <div [formGroup]="formGroup">
           <div class="mb-3">
             <label for="signup-email" class="form-label">Name</label>
-            <input type="text" class="form-control" id="signup-username" formControlName="username">
+            <input
+              type="text"
+              class="form-control"
+              id="signup-username"
+              formControlName="username"
+              [ngClass]="{ 'is-valid': formGroup.get('username')!.valid, 'is-invalid': formGroup.get('username')!.invalid && formGroup.get('username')!.dirty }"
+            >
           </div>
           <div class="mb-3">
             <label for="signup-email" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="signup-email" aria-describedby="emailHelp" formControlName="email">
+            <input
+              type="email"
+              class="form-control"
+              id="signup-email"
+              aria-describedby="emailHelp"
+              formControlName="email"
+              [ngClass]="{ 'is-valid': formGroup.get('email')!.valid, 'is-invalid': formGroup.get('email')!.invalid && formGroup.get('email')!.dirty }"
+            >
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
           </div>
           <div class="mb-3">
             <label for="signup-password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="signup-password" formControlName="password">
+            <input
+              type="password"
+              class="form-control"
+              id="signup-password"
+              formControlName="password"
+              aria-describedby="passwordHelp"
+              [ngClass]="{ 'is-valid': formGroup.get('password')!.valid, 'is-invalid': formGroup.get('password')!.invalid && formGroup.get('password')!.dirty }"
+            >
+            <div id="passwordHelp" class="form-text">8-32 characters</div>
+          </div>
+          <div class="mb-3">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="signup-tc-check"
+              >
+              <label class="form-check-label" for="signup-tc-check">
+                Agree to <span class="tnc-link" (click)="showTnCModal($event)">terms and conditions</span>
+              </label>
+            </div>
           </div>
         </div>
       </div>

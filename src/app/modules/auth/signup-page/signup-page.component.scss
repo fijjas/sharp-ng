@@ -1,0 +1,7 @@
+.tnc-link {
+  cursor: pointer;
+  text-decoration: underline;
+  &:hover {
+    opacity: .8;
+  }
+}

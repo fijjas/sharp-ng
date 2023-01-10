@@ -1,1 +1,35 @@
-<p>signin-page works!</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="card col-6">
+      <div class="card-header">Sign In</div>
+      <div class="card-body">
+        <h4 class="card-subtitle mb-2">Welcome to Parrot Wings Coin Transfer!</h4>
+        <div [formGroup]="formGroup">
+          <div class="mb-3">
+            <label for="signin-email" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="signin-email"
+              formControlName="email"
+              [ngClass]="{ 'is-valid': formGroup.get('email')!.valid, 'is-invalid': formGroup.get('email')!.invalid && formGroup.get('email')!.dirty }"
+            >
+          </div>
+          <div class="mb-3">
+            <label for="signin-password" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="signin-password"
+              formControlName="password"
+              [ngClass]="{ 'is-valid': formGroup.get('password')!.valid, 'is-invalid': formGroup.get('password')!.invalid && formGroup.get('password')!.dirty }"
+            >
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary" (click)="signin()" [disabled]="formGroup.invalid">Sign In</button>
+      </div>
+    </div>
+  </div>
+</div>
