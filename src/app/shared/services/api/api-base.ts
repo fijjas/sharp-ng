@@ -1,5 +1,4 @@
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 export abstract class ApiBase<T> {
   private static readonly API_URL = 'http://193.124.114.46:3001';

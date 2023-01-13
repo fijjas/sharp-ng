@@ -54,6 +54,7 @@
             </div>
           </div>
         </div>
+        <div class="alert alert-danger" *ngIf="signupError">{{ signupError }}</div>
       </div>
       <div class="card-footer">
         <button type="button" class="btn btn-primary" (click)="signup()" [disabled]="formGroup.invalid">Sign Up</button>
